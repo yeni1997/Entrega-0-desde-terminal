@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/47363339c8.js" crossorigin="anonymous"></script><!--agregado-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<style>
+  i {
+  color:rgb(218, 186, 10);
+}
+
+  l {
+    color: rgb(121, 118, 118);
+  }
+</style>
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      
+      <!--menú desplegable-->
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="py-2 d-none d-md-inline-block" id="nombre"></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="py-2 d-none d-md-inline-block dropdown-item" href="cart.html"><i class="fas fa-cart-plus"></i> Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html"><i class="fas fa-user-circle"></i> Mi perfil</a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" onclick="desconectar();"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h3 class="alert-heading">Información de producto</h3>
+      <hr>
+    </div>
+
+    <div class="container p-3 my-3 border">
+    <h1 id="productName" class="animate__hinge"></h1>
+<hr>
+    <h3 id="categoryProduct"></h3><br>
+
+    
+
+    <dl>
+      
+     
+        <dt>Imágenes</dt>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery"> 
+        
+          </div><br>
+
+<!--Carrusel-->
+<div id="imagDesc">
+<div class="slider">
+      <div class="" id="carruselImg">
+  
+  </div>
+      </div>
+
+      <div class="container-12">
+      <dt>Descripción</dt><br>
+      <dd>
+        
+        <p1 id="productDescription"></p1>
+      
+      </dd></div>
+</div>
+<br><br>
+      <dt>Costo</dt>
+      <dd>
+        <p id="productCost"></p>
+        <p id="productCurrency"></p>
+      </dd>
+        
+      
+
+      <dt>Productos vendidos</dt>
+      <dd>
+        <p id="productSoldCount"></p>
+      </dd>
+
+      <dt>Productos relacionados</dt><br>
+      <dd>
+        <p id="relatedProducts"></p>
+      </dd>
+<!--pasé div al 86 cierre seccion derecha--></div>
+
+
+      
+      </dl>
+    </div>
+<br>
+    <div class="container">
+      <dl>
+        <dt>Comentarios <l class="fas fa-comments"></l></dt>
+      <dd>
+        <div id="comentariosAutos">
+          
+        </div>
+      </dd>
+    
+      <br>
+      
+      <dt>Cuéntanos tu expiriencia:</dt><br>
+      <form>
+         <div id="calificacion">
+          <input id="radio1" type="radio" name="estrella" value="5">
+          <label for="radio1"><i class="fas fa-car-alt"></i></label>
+          <input id="radio2" type="radio" name="estrella" value="4">
+          <label for="radio2"><i class="fas fa-car-alt"></i></label>
+          <input id="radio3" type="radio" name="estrella" value="3">
+          <label for="radio3"><i class="fas fa-car-alt"></i></label>
+          <input id="radio4" type="radio" name="estrella" value="2">
+          <label for="radio4"><i class="fas fa-car-alt"></i></label>
+          <input id="radio5" type="radio" name="estrella" value="1">
+          <label for="radio5"><i class="fas fa-car-alt"></i></label>
+         </div> 
+
+         <div>
+           <span id="icon">
+           </span>
+          </div>
+      </form>
+        
+        <div>
+        <label id="comentario">Comentario:</label>
+        <div>
+        <textarea id="comment" name="textarea" class="estilotextarea3" placeholder="Agregar comentario"></textarea>
+      </div>
+        <button id="enviar" type="submit">Enviar <l class="far fa-comment-dots"></l></button>
+        </div>
+      
+
+
+    </dl>
+</div>
+</div>
+  </main>
+
+
+  
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>
