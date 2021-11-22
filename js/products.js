@@ -40,8 +40,6 @@ function ordenarRelevancia() {
 
 function showProductsList(array) {
 
-    let htmlContentToAppend = "";
-    
     
     for (let i=0; i < array.length; i++ ){
         let product = array[i];
@@ -50,30 +48,41 @@ function showProductsList(array) {
         if (((precioMin == undefined) || (precioMin != undefined && parseInt(product.cost) >= precioMin)) &&
             ((precioMax == undefined) || (precioMax != undefined && parseInt(product.cost) <= precioMax))){
     
-    htmlContentToAppend+=`
-    <div class="list-group-item list-group-item-action">
+                document.getElementById("contenedorProductos").innerHTML += `
+    
+                
+                
+                
+                
                 <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    <div class="text-info">` + product.cost + ` US$</div>
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
+          <div class="col-md-5">
+          <div class="card text-center" id="card">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="card-img-top" >
+                    
+                        <div class="card-body">
+                            <h4 class="class="card-title mb-1">`+ product.name +`</h4>
                             
                             <small class="text-muted">` + product.soldCount + ` artículos</small>
-                            
+                            <div class="text-info">` + product.cost + ` US$</div>
                         
-                        </div>
+                        
                         
                         <p class="mb-1">` + product.description + `</p>
                     </div>
-                </div>
+                    
             </div>
+                           
+        
+        
+        </div>
+
+        
+      
+            
             `
         
         }
-        document.getElementById("list-container").innerHTML = htmlContentToAppend;
+        
     
         
     }

@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -57,26 +57,70 @@
 
     </div>
   </nav>
+
+  <main role="main" class="pb-5">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
+
+    <div class="text-center p-4">
+      <h3 class="alert-heading">Mi perfil</h3>
       <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+    <form id="formulario">
+      
+        <div class="form-group" >
+        <label for="nombres" style="font-size: 5mm;">Nombres</label>
+        <input type="text" class="form-control" id="nombres" placeholder="Ingresar nombres">
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos" style="font-size: 5mm;">Apellidos</label>
+        <input type="text" class="form-control" id="apellidos" placeholder="Ingresar apellidos">
+      </div>
+
+
+     <div class="form-group">
+        <label for="edad" style="font-size: 5mm;">Edad</label>
+        <input type="number" class="form-control" id="edad" placeholder="Ingresar edad">
+      </div>
+
+      <div class="form-group">
+        <label for="email" style="font-size: 5mm;">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" placeholder="Ingresar correo electrónico">
+      </div>
+
+      <div class="form-group">
+        <label for="contacto" style="font-size: 5mm;">Teléfono de contacto</label>
+        <input type="tel" class="form-control" id="contacto" placeholder="Ingresar número de contacto">
+      </div>
+
+      <button type="submit" class="btn btn-info" onclick="guardarDatos();" id="enviar">Guardar</button>
+
+
+    </form>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+  
+
+
+    <div class="col">
+      <input type="file">
+      <a href="https://ibb.co/bNzpT76"><img src="https://i.ibb.co/VM2XR3L/Captura-de-pantalla-2021-08-08-204338.png" alt="Captura-de-pantalla-2021-08-08-204338" border="0" style="width: 200px; height: min-content;" id="imagen-perfil"></a>
+    <p id="nombreUsuario"> <i class="fas fa-user-check"></i></p>
+    <p id="apellidoUsuario"> <i class="fas fa-user-check"></i></p>
+    <p id="edadUsuario"> <i class="fas fa-birthday-cake"></i></p>
+    <p id="emailUsuario"> <i class="fas fa-at"></i></p>
+    <p id="contactoUsuario"> <i class="fas fa-mobile-alt"></i></p>
+
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+    </div>
+    </div>
+  
+
+</main>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -91,6 +135,8 @@
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
   <script src="js/login.js"></script>
+  
+ 
 </body>
 
 </html>

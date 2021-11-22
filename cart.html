@@ -12,6 +12,8 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+ 
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -27,6 +29,21 @@
         font-size: 3.5rem;
       }
     }
+
+
+    
+form input{
+ width: 246px;
+  
+}
+
+form label{
+  font-size: 10px;
+  float: left;
+  text-align:start;
+}
+
+
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -56,14 +73,218 @@
 
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+    <main role="main" class="pb-5">
+
+
+      <div class="text-center p-4">
+        <h3 class="alert-heading">Carrito de compra</h3>
+        <hr>
+      </div>
+
+      
+     <div class="container">
+        <div class="row">
+      <div class="col-sm-7">
+        <div class="cart-main">
+        <div class="cart-items">
+          <table class="cart-items-list table" id="tablaCompra">
+            <thead>
+              <tr>
+                <th>Artículo</th>
+               
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+              </tr>
+              <tbody>
+                <tr id="cuerpoTabla">
+
+                </tr>
+    
+              </tbody>
+            </thead>
+          </table>
+        
+        </div>
+</div>
+      </div>
+
+<div class="col-sm-1"></div>
+
+<!--<div class="container p-4" id="contenedorEnvio">-->
+     <div class="col-sm-3">
+        <h5>Método de envío:</h5>
+
+    <form class="needs-validation" novalidate>    
+       
+        
+        <div class="form-group">
+          <label for="seleccionarPais" style="font-size: medium;">País </label>
+          <select class="form-control" id="seleccionarPais" required>
+            <option value="" disabled selected>--Seleccionar país--</option>
+            <option value="pais1">Argentina</option>
+            <option value="pais2">Bolivia</option>
+            <option value="pais3">Brasil</option>
+            <option value="pais4">Chile</option>
+            <option value="pais5">Colombia</option>
+            <option value="pais6">Ecuador</option>
+            <option value="pais7">Paraguay</option>
+            <option value="pais8">Perú</option>
+            <option value="pais9">Uruguay</option>
+            <option value="pais10">Venezuela</option>
+          </select>
+          <div class="invalid-feedback">
+            Debes de seleccionar un país
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="calle" style="font-size: medium;">Calle </label>
+          <input type="text" class="form-control" id="calle"  placeholder="" required>
+          <div class="invalid-feedback">
+             Debes de ingresar el nombre de la calle
+          </div>
+        </div>
+          
+          
+        <div class="form-group">
+          <label for="esquina" style="font-size: medium;">Esquina </label>
+          <input type="text" class="form-control" id="esquina" placeholder="" required>
+        <div class="invalid-feedback">
+          Debes de ingresar esquina
+        </div>
+        </div>
+        
+          
+        <div class="form-group">
+          <label for="puerta" style="font-size: medium;">Nº de puerta </label>
+          <input type="number" class="form-control" id="puerta"  placeholder="" required>
+        <div class="invalid-feedback">
+          Debes de ingresar número
+        </div>
+        </div>
+        
+          
+        <div class="form-group">
+          <label for="referencia" style="font-size: medium;">Referencias </label>
+          <input type="text" class="form-control" id="referencia"  placeholder="" required>
+        <div class="invalid-feedback">
+         Ingresar referencia
+        </div>
+        </div>
+        
+       
+
+          <!--MODAL-->
+<div class="modal-container">
+  <div class="modal" id="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Seleccionar tipo de envío</h5>
+         
+        </div>
+        <div class="modal-body">
+        
+          
+          <div class="custom-control custom-radio">
+            <input type="radio" id="premium" value="15" name="customRadio" class="custom-control-input"  required>
+            <label class="custom-control-label" for="premium" style="font-size: 15px;">Premium (2-5 días) - Costo del 15% sobre el Subtotal</label>
+            <div class="invalid-feedback">
+              
+            </div>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="express" value="7" name="customRadio" class="custom-control-input" required>
+            <label class="custom-control-label" for="express" style="font-size: 15px;">Express (5-8 días) - Costo del 7% sobre el Subtotal</label>
+            <div class="invalid-feedback">
+             
+            </div>
+          </div>
+
+          <div class="custom-control custom-radio">
+            <input type="radio" id="standard" value="5" name="customRadio" class="custom-control-input" required>
+            <label class="custom-control-label" for="standard" style="font-size: 15px;">Standard (12 a 15 días) - Costo del 5% sobre el Subtotal</label>
+              <div class="invalid-feedback" style="font-size: 15px;">
+              *Seleccionar una opción de envío
+            </div>
+          </div>
+
+        </div><br><br>
+        <div class="modal-footer">
+          <button id="guardarEnvio" type="button" class="btn btn-primary"><span class="close" aria-hidden="true">Guardar</span></button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+   
+          <div class="form-group">
+                    <button id="botonModal" type="button" class="btn btn-light" style="width: 246px; background-color: aliceblue;">Tipo de envío <i class="fas fa-truck-moving"></i></button> 
+                    <div class="invalid-feedback">
+                      Seleccionar una opción de envío
+                    </div>
+                  </div>
+          
+         
+        <button class="btn btn-info" type="submit" style="float:right;">Enviar</button>
+      </div>
+
+</div>
+</div>
+</div>
+
+
+
+</form>
+</div>
+
+
+<!--</div>-->
+
+
+
+  <div class="w-100">
+    <div class="col-5">
+ <div class="container p-3 my-3 border">
+<h5>Costos</h5>
+<table class="cart-citems-list table" id="tablaCostos">
+  <tr>
+    <td>Subtotal</td>
+    <td class="subtotal" id="subtotalCostos"></td>
+  </tr>
+
+  <tr>
+    <td>Costo envío</td>
+    <td id="costoEnvio"></td>
+  </tr>
+
+  <tr>
+    <td>Total</td>
+    <td id="totalCostos"></td>
+  </tr>
+</table>
+</div> 
+
+</div>
+
+</div>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -73,7 +294,7 @@
     </div>
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <!--<script src="js/bootstrap.bundle.min.js"></script>-->
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
